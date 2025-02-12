@@ -112,7 +112,7 @@ This will generate charts showing:
 
 **Author:** Siddartha Reddy Boreddy  
 📍 **SUNY Binghamton**  
-✉️ **Email:** siddarthboreddy@xyz.com  
+✉️ **Email:** sboreddy@binghamton.edu 
 
 ---  
 
