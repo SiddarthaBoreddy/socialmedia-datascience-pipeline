@@ -1,72 +1,130 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/QM6TDYML)
+# 🌐 Sentiment Analysis & Hate Speech Detection Web Dashboard  
 
+## 📖 Overview  
 
-This project demonstrates a Flask web application with Matplotlib integration for data analysis on recession-related topics  from Reddit,Youtube,4chan. The application allows users to visualize data, analyze sentiments, and explore hatespeech trends across different platforms.
+This module implements a **Flask-based web dashboard** to **visualize sentiment analysis and hate speech detection results**. The frontend provides interactive visualizations and allows users to explore sentiment trends and hate speech insights over time.  
 
-Getting Started
+This dashboard is part of a larger **3-part project**, where:  
+- **Part 1 (Crawler)** → Fetches data from Reddit & YouTube.  
+- **Part 2 (Analysis)** → Processes and analyzes sentiment and hate speech.  
+- **Part 3 (Web Visualization)** → Presents insights on a web page.  
 
-Follow these steps to set up and run the Demo locally:
+---  
 
-Prerequisites
+## 🛠 Technologies Used  
 
-- Python 3
-- Flask
-- Matplotlib
--psycopg2
+- **Flask (Python Web Framework)** – Handles backend requests.  
+- **HTML, CSS, Bootstrap** – Frontend design and styling.  
+- **Jinja2 (Flask Templates)** – Dynamically renders analysis results.  
+- **Matplotlib & Pandas** – Generates plots for visualization.  
+- **PostgreSQL** – Stores processed sentiment and hate speech analysis results.  
 
-Installation
+---  
 
+## 📌 Features  
 
--> Install the required dependencies:
-    pip install flask
-    pip install matplotlib
-    pip install psycopg2
-    pip install mpld3
+✅ **Interactive Dashboard** – Displays visual insights for sentiment & hate speech analysis.  
+✅ **Dynamic Graphs** – Visualizes sentiment trends, comment volume, and hate speech detection.  
+✅ **User Input Options** – Allows filtering by **start & end dates**.  
+✅ **Bootstrap UI** – Modern, responsive, and user-friendly interface.  
+✅ **Flask Backend** – Efficient data retrieval and dynamic content rendering.  
 
-Running the Application
+---  
 
-1.	Run the Flask application:
-Python3 directory/app.py
+## 📂 Project Structure  
 
-2. Open your web browser and go to http://localhost:5000 to access the application.
+```
+📁 Web-Dashboard/
+│── app.py            # Flask backend for rendering data
+│── templates/
+│   └── index.html    # Frontend for interactive dashboard
+│── static/           # Contains CSS, JavaScript, and images
+│── README.md         # Project documentation
+```  
 
-Usage
+---  
 
-->Plotting Top Subreddits
+## 🚀 How It Works  
 
-- Click on the "Plot Top Subreddits" button to visualize the top 10 subreddits by comment count.
+### **1️⃣ Set Up Virtual Environment & Install Dependencies**  
+```sh
+python -m venv venv
+source venv/bin/activate   # For macOS/Linux
+venv\Scriptsctivate      # For Windows
 
-->Politics Comments Over Time
+pip install -r requirements.txt
+```  
 
-- Use the form to input start and end dates for plotting politics comments over time.
+### **2️⃣ Set Up PostgreSQL Database**  
+Ensure the sentiment analysis results are stored in a PostgreSQL table:  
 
-->Data Counts from Different APIs
+```sql
+CREATE TABLE analyzed_comments (
+    comment_id TEXT PRIMARY KEY,
+    original_comment TEXT,
+    cleaned_comment TEXT,
+    is_hate_speech BOOLEAN,
+    hate_speech_confidence DOUBLE PRECISION,
+    sentiment TEXT,
+    sentiment_score DOUBLE PRECISION
+);
+```  
 
-- Explore data counts from different APIs by providing start and end dates.
+### **3️⃣ Run Flask Server**  
+```sh
+python app.py
+```  
 
-->Sentiment Analysis
+This starts the **Flask web application**. By default, it runs on `http://127.0.0.1:5000/`.
 
-- Perform sentiment analysis on Reddit, 4chan, YouTube, and Politics by submitting the respective forms.
+### **4️⃣ Access the Dashboard**  
+Open a web browser and navigate to:  
+```sh
+http://127.0.0.1:5000/
+```  
 
-->Hatespeech Analysis
+---  
 
-- Analyze hatespeech trends on Reddit, 4chan, YouTube, and Politics using the provided forms.
+## 🎨 Dashboard Sections  
 
-->Customization
+- **📊 Data Trends** – Visualizes comment volume over time.  
+- **📈 Sentiment Analysis** – Displays positive, negative, and neutral sentiment trends.  
+- **🚨 Hate Speech Detection** – Shows flagged comments and confidence levels.  
+- **📅 Date-Based Filtering** – Users can select custom date ranges to refine insights.  
 
-Feel free to customize the HTML and CSS files (`index.html` and `static/style.css`) to match your desired look and feel.
+---  
 
-->Dependencies
+## 🔐 Data Considerations  
 
-- Flask: https://flask.palletsprojects.com/
-- Matplotlib: https://matplotlib.org/
+- **Real-Time Updates** → Refreshing the dashboard fetches the latest data from the database.  
+- **Scalability** → The Flask backend can be expanded to handle larger datasets.  
+- **Security** → Ensure proper input validation to prevent **SQL injection** attacks.  
 
+---  
 
-->Acknowledgments
+## 🔮 Future Enhancements  
 
-- Special thanks to the Flask and Matplotlib communities for their valuable tools and resources.
+🔹 **Deploy on Cloud (AWS, Heroku, GCP)** for public access.  
+🔹 **Add User Authentication** to restrict data access.  
+🔹 **Enhance UI with JavaScript & Chart.js for interactive visualizations.**  
+🔹 **Integrate AI-based Sentiment Predictions** for better accuracy.  
 
-Author,
-Team Aassemble.
+---  
 
+## 📜 References  
 
+- [Flask Documentation](https://flask.palletsprojects.com/)  
+- [Bootstrap Framework](https://getbootstrap.com/)  
+- [Matplotlib & Pandas](https://matplotlib.org/stable/)  
+
+---  
+
+## 📧 Contact  
+
+**Author:** Siddartha Reddy Boreddy  
+📍 **SUNY Binghamton**  
+✉️ **Email:** sboreddy@binghamton.edu  
+
+---  
+
+### ⭐ If you find this project helpful, feel free to star the repository! 🚀  
