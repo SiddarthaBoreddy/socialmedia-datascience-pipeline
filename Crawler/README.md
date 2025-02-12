@@ -139,7 +139,7 @@ This will run the crawler at **regular intervals** to fetch new data.
 
 **Author:** Siddartha Reddy Boreddy  
 📍 **SUNY Binghamton**  
-✉️ **Email:** siddarthboreddy@xyz.com  
+✉️ **Email:** sboreddy@binghamton.edu  
 
 ---  
 
